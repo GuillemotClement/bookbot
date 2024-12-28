@@ -5,8 +5,10 @@ def main():
     text = get_content_file(book_path)
     # on appelle la fonction pour récupérer le nombre de mot dans le text
     count_word = counter_word(text)
-    # affichage du nombre de mots
+    # compteur de caractère
+    count_caracter = get_number_cara(text)
     print("The book have",count_word, " words")
+    print("Décompte de caractère :", count_caracter)
 
 # la fonction permet de récupérer le contenu d'un fichier passé en argument
 def get_content_file(path):
@@ -20,5 +22,14 @@ def counter_word(text):
   # on retourne la longueur de la liste contenant les mots du text
   return len(list_word)
 
+def get_number_cara(text):
+  text = text.lower()
+  number_cara = {}
+  for caractere in text:
+    if caractere not in number_cara:
+      number_cara[caractere] = 1
+    else:
+      number_cara[caractere] += 1
+  return number_cara
 
 main()
