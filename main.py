@@ -1,5 +1,6 @@
 def main():
-    text = get_content_file("./books/frankenstein.txt")
+    book_path = "./books/frankenstein.txt"
+    text = get_content_file(book_path)
     print(text)
 
 def get_content_file(path):
