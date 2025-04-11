@@ -1,11 +1,7 @@
-def get_book_text(filePath):
-  with open(filePath) as f:
-    file_contents = f.read()
-  return file_contents
+# importations des fonctions du fichier stats
+# stats est le nom du fichier contenant les fonctions.
+from stats import get_book_text, count_number_of_words
 
-def count_number_of_words(content):
-  list_word = content.split()
-  return len(list_word)
 
 def main():
   content_book = get_book_text('./books/frankenstein.txt') 
