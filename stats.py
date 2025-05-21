@@ -18,3 +18,26 @@ def get_chars_dict(text):
             chars[lowered] = 1
     # retourne le dictionnaire
     return chars
+
+# fonction pour le triage de la liste
+def sort_on(dict):
+    return dict["num"]
+
+def char_list(char_dict):
+    count_list = []
+
+    for char in char_dict:
+        # verifie si le nombre est alphanumerique
+        if char.isalpha():
+            dict = {
+                "name": char,
+                "num" : char_dict[char]
+            }
+            count_list.append(dict)
+
+    # triage
+    count_list.sort(reverse=True, key=sort_on)
+
+    return count_list
+
+
