@@ -4,18 +4,17 @@ def get_number_of_words(data):
     # retourne le nombre de mots dans le texte
     return len(list_words)
 
-def count_char(file):
-    words = file.split()
-
-    char_count = {}
-
-    for word in words:
-        lower_word = word.lower()
-
-        for char in lower_word:
-            if char in char_count:
-                char_count[char] += 1
-            else:
-                char_count[char] = 1
-
-    return char_count
+def get_chars_dict(text):
+    # preparation du dictionnaire
+    chars = {}
+    # parcours les character du text passer
+    for c in text:
+        # conversion en minuscule
+        lowered = c.lower()
+        # ajout dans le dictionnaire
+        if lowered in chars:
+            chars[lowered] += 1
+        else:
+            chars[lowered] = 1
+    # retourne le dictionnaire
+    return chars

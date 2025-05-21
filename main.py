@@ -1,4 +1,4 @@
-from stats import get_number_of_words, count_char
+from stats import get_number_of_words, get_chars_dict
 
 def get_book_text(filepath):
     # ouvre le fichier
@@ -14,10 +14,11 @@ def main():
     # recuperation du content
     text = get_book_text(book_path)
     # appelle de la fonction pour retourner le nombre de mots du texte
-    count_words = get_number_of_words(text)
+    num_words = get_number_of_words(text)
+    # appelle de la fonction qui stats les characteres
+    char_dict = get_chars_dict(text)
 
-    print(f"{count_words} words found in the document")
-
-    print(count_char(text))
+    print(f"{num_words} words found in the document")
+    print(char_dict)
 
 main()
